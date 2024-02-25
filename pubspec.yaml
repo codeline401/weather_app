@@ -1,0 +1,43 @@
+name: flutter_weather
+description: A new Flutter project
+
+publish_to: 'none' # Remove this line if you wish to publish to pub.dev
+
+version: 1.0.0+1
+
+environment:
+  sdk: '>=3.2.0 <4.0.0'
+
+dependencies:
+  bloc : ^8.1.0 #
+  equatable: ^2.0.5 # Enable our app's state class instance to be compared using the equals == operator
+  flutter:
+    sdk: flutter
+  flutter_bloc: ^8.1.1 # BloC will compare our states if they're equal, or not
+  google_fonts: ^4.0.0 # To spice up our user interface
+  hydrated_bloc: ^9.0.0 # to persist state when the app is closed end reopened
+  json_annotation: ^4.6.0
+  path_provider: ^2.0.8 
+  cupertino_icons: ^1.0.2
+  weather_repository:
+    path: packages/weather_repository
+
+  http: ^0.13.0
+  
+
+dev_dependencies:
+  bloc_test: ^9.1.0 # To enable easy testing of business logic units
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^2.0.0
+
+  build_runner: ^2.0.0
+  json_serializable: ^6.3.1
+  mocktail: ^1.0.0
+  test: ^1.16.4
+
+
+flutter:
+  uses-material-design: true
+  assets:
+    - assets/
