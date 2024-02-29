@@ -7,6 +7,7 @@ import 'package:mocktail/mocktail.dart';
 
 import '../../helpers/hydrated_bloc.dart';
 
+//ignore: must_be_immutable
 class MockWeather extends Mock implements Weather {
   //constructeur
   MockWeather (this._condition);
