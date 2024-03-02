@@ -11,7 +11,7 @@ class WeatherEmpty extends StatelessWidget {
       mainAxisSize: MainAxisSize.min,
       children: [
         const Text('🏙️', style: TextStyle(fontSize: 64),),
-        Text('Please select a city!', style: theme.textTheme.headlineSmall,),
+        Text('Please Select a City!', style: theme.textTheme.headlineSmall,),
       ],
     );
   }
