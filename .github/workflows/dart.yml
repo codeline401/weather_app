@@ -23,3 +23,8 @@ jobs:
       - run: flutter pub get
       - run: flutter test
       - run: flutter build apk
+      - name : Archive APK 
+        uses : actions/upload-artifact@v2
+        with :
+          name : app-release
+          path : build/app/outputs/flutter-apk/weather-app.apk
