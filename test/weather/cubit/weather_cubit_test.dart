@@ -296,30 +296,32 @@ void main() {
       );
 
       blocTest<WeatherCubit, WeatherState>(
-        'emits updated units and temperature when status is success (fahreinhet)',
+        'emits updated units and temperature '
+        'when status is success (fahrenheit)',
         build: () => weatherCubit,
-        act: (cubit) => cubit.toggleUnits(),
         seed: () => WeatherState(
           status: WeatherStatus.success,
-          temperatureUnits: TemperatureUnits.fahrenheit,
           weather: Weather(
-            condition: WeatherCondition.rainy, 
-            lastUpdated: DateTime(2020), 
-            location: weatherLocation, 
-            temperature: const Temperature(value: weatherTemperature)
-          )
+            location: weatherLocation,
+            temperature: const Temperature(value: weatherTemperature),
+            lastUpdated: DateTime(2020),
+            condition: WeatherCondition.rainy,
+          ),
         ),
+        act: (cubit) => cubit.toggleUnits(),
         expect: () => <WeatherState>[
           WeatherState(
             status: WeatherStatus.success,
             temperatureUnits: TemperatureUnits.fahrenheit,
             weather: Weather(
-              condition: WeatherCondition.rainy, 
-              lastUpdated: DateTime(2020), 
-              location: weatherLocation, 
-              temperature: Temperature(value: weatherTemperature.toFahrenheit())
-            )
-          )
+              location: weatherLocation,
+              temperature: Temperature(
+                value: weatherTemperature.toFahrenheit(),
+              ),
+              lastUpdated: DateTime(2020),
+              condition: WeatherCondition.rainy,
+            ),
+          ),
         ],
       );
     });
